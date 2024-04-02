@@ -1,5 +1,6 @@
 import { SafeAreaView } from "react-native";
 import styled from "styled-components/native";
+import { ButtonIcon } from "../../components/ButtonIcon";
 
 export const SafeArea = styled(SafeAreaView)`
   flex: 1;
@@ -20,4 +21,20 @@ export const Header = styled.View`
 
   flex-direction: row;
   justify-content: space-between;
+`;
+
+export const WrapperActions = styled.View`
+  width: 100%;
+
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+`;
+
+export const WrapperStateTask = styled.View`
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
 `;

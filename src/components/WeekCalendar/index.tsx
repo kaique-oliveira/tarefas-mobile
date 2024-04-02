@@ -38,7 +38,10 @@ export const WeekCalendar = ({ selectedDate, onChangeDateSelected }: Props) => {
   return (
     <Container>
       {weekDates.map((date) => (
-        <WrapperDayWeek onPress={() => onChangeDateSelected(date)}>
+        <WrapperDayWeek
+          key={date.toLocaleDateString()}
+          onPress={() => onChangeDateSelected(date)}
+        >
           <WeekDay
             style={{
               color:
