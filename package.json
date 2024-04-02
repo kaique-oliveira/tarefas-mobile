@@ -12,8 +12,10 @@
     "@types/styled-components": "^5.1.34",
     "expo": "~50.0.14",
     "expo-status-bar": "~1.11.1",
+    "phosphor-react-native": "^2.0.0",
     "react": "18.2.0",
     "react-native": "0.73.6",
+    "react-native-animatable": "^1.4.0",
     "styled-components": "^6.1.8",
     "styled-components-react-native": "^1.0.0"
   },

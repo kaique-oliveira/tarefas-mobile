@@ -13,10 +13,10 @@ export default {
     NEGATIVE_HOVER: "#FF7777",
   },
   FONTS_SIZE: {
-    TITLE: "28px",
+    TITLE: "24px",
     SUBTITLE: "18px",
     PARAGRAPH: "16px",
-    LABEL: "14px",
+    LABEL: "12px",
   },
   FONT_WEIGHT: {
     SM: "300",
