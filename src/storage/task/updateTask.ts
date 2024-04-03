@@ -3,16 +3,15 @@ import { typeTask } from "../DTO";
 import { getAllTasks } from "./getAllTasks";
 import { TASK_COLLECTION } from "./storageConfig";
 
-export async function insertTask(newTask: typeTask) {
+export async function updateTask(editedTask: typeTask) {
   try {
     const storageTasks = await getAllTasks();
 
-    newTask.id = storageTasks.length + 1;
+    const filterTask = storageTasks.filter((x) => x.id !== editedTask.id);
 
-    await AsyncStorage.setItem(
-      TASK_COLLECTION,
-      JSON.stringify([...storageTasks, newTask])
-    );
+    filterTask.push(editedTask);
+
+    await AsyncStorage.setItem(TASK_COLLECTION, JSON.stringify(filterTask));
   } catch (error) {
     throw error;
   }

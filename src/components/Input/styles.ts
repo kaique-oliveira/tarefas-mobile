@@ -21,6 +21,7 @@ export const InputText = styled.TextInput<Props>`
   padding: 0px 16px;
 
   font-size: ${({ theme }) => theme.FONTS_SIZE.PARAGRAPH};
+  color: ${({ theme }) => theme.COLORS.NEUTRAL_200};
 
   ${({ isFocused, theme }) =>
     isFocused

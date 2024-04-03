@@ -14,9 +14,17 @@ export const TaskState = ({ state, text, ...rest }: Props) => {
   return (
     <Container {...rest} variant={state ? "active" : "neutral"}>
       {state ? (
-        <RadioButton size={16} weight="fill" color={theme.COLORS.NEUTRAL_100} />
+        <RadioButton
+          size={16}
+          weight="fill"
+          color={state ? "white" : theme.COLORS.NEUTRAL_200}
+        />
       ) : (
-        <Circle size={16} weight="bold" color={theme.COLORS.NEUTRAL_200} />
+        <Circle
+          size={16}
+          weight="bold"
+          color={state ? "white" : theme.COLORS.NEUTRAL_200}
+        />
       )}
       <Title variant={state ? "active" : "neutral"}>{text}</Title>
     </Container>

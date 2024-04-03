@@ -9,7 +9,7 @@ type Props = {
 
 export const Container = styled(TouchableOpacity)<Props>`
   max-width: max-content;
-  height: 40px;
+  height: 48px;
 
   padding: 8px 16px;
   border-radius: 50%;
@@ -34,8 +34,6 @@ export const Title = styled.Text<Props>`
   ${({ theme, variant }) => css`
     font-size: ${theme.FONTS_SIZE.PARAGRAPH};
     font-weight: ${theme.FONT_WEIGHT.LG};
-    color: ${variant === "neutral"
-      ? theme.COLORS.NEUTRAL_200
-      : theme.COLORS.NEUTRAL_100};
+    color: ${variant === "neutral" ? theme.COLORS.NEUTRAL_200 : "white"};
   `}
 `;

@@ -1,5 +1,9 @@
 import styled, { css } from "styled-components/native";
 
+type Props = {
+  typeTheme: "light" | "dark";
+};
+
 export const Container = styled.View`
   width: 100%;
   height: 100%;
@@ -11,7 +15,7 @@ export const Container = styled.View`
   padding: 16px;
 `;
 
-export const WrapperContent = styled.View`
+export const WrapperContent = styled.View<Props>`
   width: 100%;
   height: max-content;
 
@@ -24,6 +28,15 @@ export const WrapperContent = styled.View`
 
   background-color: ${({ theme }) => theme.COLORS.DEFAULT};
   box-shadow: 0px 0px 50px rgba(114, 114, 114, 0.36);
+
+  ${({ typeTheme }) =>
+    typeTheme === "dark"
+      ? css`
+          box-shadow: 0px 0px 50px rgba(0, 0, 0, 1);
+        `
+      : css`
+          box-shadow: 0px 0px 50px rgba(114, 114, 114, 0.4);
+        `}
 `;
 
 export const Title = styled.Text`

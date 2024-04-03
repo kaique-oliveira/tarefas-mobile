@@ -35,6 +35,7 @@ export const ContainerInfo = styled.View`
 
   justify-content: center;
   align-items: flex-start;
+  gap: 8px;
 `;
 
 export const Title = styled.Text`
@@ -48,7 +49,7 @@ export const Title = styled.Text`
 export const SubTitle = styled.Text`
   ${({ theme }) => css`
     font-size: ${theme.FONTS_SIZE.PARAGRAPH};
-    font-weight: ${theme.FONT_WEIGHT.SM};
+    font-weight: ${theme.FONT_WEIGHT.MD};
     color: ${theme.COLORS.NEUTRAL_200};
   `}
 `;

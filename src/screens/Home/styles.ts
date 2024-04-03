@@ -12,7 +12,7 @@ export const Container = styled.View`
 
   background-color: ${({ theme }) => theme.COLORS.DEFAULT};
   padding: 16px;
-  gap: 24px;
+  gap: 32px;
 `;
 
 export const Header = styled.View`
