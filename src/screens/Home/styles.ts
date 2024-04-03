@@ -1,6 +1,5 @@
 import { SafeAreaView } from "react-native";
 import styled from "styled-components/native";
-import { ButtonIcon } from "../../components/ButtonIcon";
 
 export const SafeArea = styled(SafeAreaView)`
   flex: 1;

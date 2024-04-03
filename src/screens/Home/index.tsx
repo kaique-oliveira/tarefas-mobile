@@ -13,25 +13,40 @@ import { SwitchTheme } from "../../components/SwitchTheme";
 import { WeekCalendar } from "../../components/WeekCalendar";
 import { useState } from "react";
 import { CardTask } from "../../components/CardTask";
-import { FlatList } from "react-native";
+import { Alert, FlatList, Modal, Text } from "react-native";
 import { TaskState } from "../../components/TaskState";
 import { Plus } from "phosphor-react-native";
 import { ButtonIcon } from "../../components/ButtonIcon";
+import { Link } from "expo-router";
+import { FormNewTask } from "../../components/FormNewTask";
 
 const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-export const Home = () => {
+export default function Home() {
   const { getTheme } = useChangeTheme();
 
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedStateTask, setSelectedStateTask] = useState<"todo" | "done">(
     "todo"
   );
+  const [toggleModal, setToggleModal] = useState(false);
 
   return (
     <ThemeProvider theme={getTheme === "dark" ? dark : light}>
       <SafeArea>
         <Container>
+          <Modal
+            animationType="slide"
+            transparent={true}
+            visible={toggleModal}
+            onRequestClose={() => {
+              Alert.alert("Modal has been closed.");
+              setToggleModal(!toggleModal);
+            }}
+          >
+            <FormNewTask onCloseModal={setToggleModal} />
+          </Modal>
+
           <Header>
             <Hightlight />
 
@@ -57,7 +72,11 @@ export const Home = () => {
               />
             </WrapperStateTask>
 
-            <ButtonIcon icon={<Plus color="#f8f8f8" />} variant="contained" />
+            <ButtonIcon
+              icon={<Plus color="#f8f8f8" />}
+              variant="contained"
+              onPress={() => setToggleModal(true)}
+            />
           </WrapperActions>
 
           <FlatList
@@ -77,4 +96,4 @@ export const Home = () => {
       </SafeArea>
     </ThemeProvider>
   );
-};
+}
